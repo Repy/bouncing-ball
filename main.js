@@ -41,12 +41,12 @@ window.addEventListener("load", function () {
          starty = e.clientY||e.touches[0].clientY; 
      } 
      window.addEventListener("mousedown", mdown, false); 
-     window.addEventListener("touchstart", mdown, false); 
+     document.body.addEventListener("touchstart", mdown, false); 
      function mup(e){ 
          xv = ((e.clientX||e.touches[0].clientX) - startx) / 10; 
          yv = ((e.clientY||e.touches[0].clientY) - starty) / 10; 
      }
         window.addEventListener("mouseup", mup, false); 
-     window.addEventListener("touchend", mup, false);
+     document.body.addEventListener("touchend", mup, false);
     window.setInterval(tick, 30);
 });
