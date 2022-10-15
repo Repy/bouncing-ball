@@ -1,5 +1,6 @@
+"use strict";
 var SIZE = 50;
-var G = 1;
+var G = 0.5;
 window.addEventListener("load", function () {
     var base = document.getElementById("base");
     var ball = document.getElementById("ball");
@@ -43,5 +44,5 @@ window.addEventListener("load", function () {
         xv = (e.clientX - startx) / 10;
         yv = (e.clientY - starty) / 10;
     }, false);
-    window.setInterval(tick, 50);
+    window.setInterval(tick, 30);
 });
