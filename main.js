@@ -36,13 +36,17 @@ window.addEventListener("load", function () {
     }
     var startx = 0;
     var starty = 0;
-    window.addEventListener("mousedown", function (e) {
-        startx = e.clientX;
-        starty = e.clientY;
-    }, false);
-    window.addEventListener("mouseup", function (e) {
-        xv = (e.clientX - startx) / 10;
-        yv = (e.clientY - starty) / 10;
-    }, false);
+    function mdown(e){ 
+         startx = e.clientX; 
+         starty = e.clientY; 
+     } 
+     window.addEventListener("mousedown", mdown, false); 
+     window.addEventListener("touchstart", mdown, false); 
+     function mup(e){ 
+         xv = (e.clientX - startx) / 10; 
+         yv = (e.clientY - starty) / 10; 
+     }
+        window.addEventListener("mouseup", mup, false); 
+     window.addEventListener("touchend", mup, false);
     window.setInterval(tick, 30);
 });
