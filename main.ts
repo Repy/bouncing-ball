@@ -35,14 +35,18 @@ window.addEventListener("load", () => {
     }
     let startx = 0;
     let starty = 0;
-    window.addEventListener("mousedown", (e) => {
+    function mdown(e){
         startx = e.clientX;
         starty = e.clientY;
-    }, false);
-    window.addEventListener("mouseup", (e) => {
+    }
+    window.addEventListener("mousedown", mdown, false);
+    window.addEventListener("touchstart", mdown, false);
+    function mup(e){
         xv = (e.clientX - startx) / 10;
         yv = (e.clientY - starty) / 10;
-    }, false);
+    }
+    window.addEventListener("mouseup", mup, false);
+    window.addEventListener("touchend", mup, false);
     window.setInterval(tick, 30);
 });
 
