@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
  alert(startx);
      }
      window.addEventListener("pointerup", mup, false); 
-     window.addEventListener("pointermove", function(e){e.preventDefault();}, false);
+    // window.addEventListener("pointermove", function(e){e.preventDefault();}, false);
 
     window.setInterval(tick, 30);
 });
