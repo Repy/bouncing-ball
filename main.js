@@ -39,6 +39,7 @@ window.addEventListener("load", function () {
     function mdown(e){ 
          startx = e.touches?e.touches[0].clientX:e.clientX; 
          starty = e.touches?e.touches[0].clientY:e.clientY; 
+ alert(startx);
  e.preventDefault();
     } 
      window.addEventListener("pointerdown", mdown, false); 
