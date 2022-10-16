@@ -37,14 +37,14 @@ window.addEventListener("load", function () {
     var startx = 0;
     var starty = 0;
     function mdown(e){ 
-         startx = e.clientX||e.touches[0].clientX; 
-         starty = e.clientY||e.touches[0].clientY; 
+         startx = e.touches?e.touches[0].clientX:e.clientX; 
+         starty = e.touches?e.touches[0].clientY:e.clientY; 
  e.preventDefault();
     } 
      window.addEventListener("pointerdown", mdown, false); 
      function mup(e){ 
-         xv = ((e.clientX||e.touches[0].clientX) - startx) / 10; 
-         yv = ((e.clientY||e.touches[0].clientY) - starty) / 10; 
+         xv = ((e.touches?e.touches[0].clientX:e.clientX) - startx) / 10; 
+         yv = ((e.touches?e.touches[0].clientY:e.clientY) - starty) / 10; 
  e.preventDefault();
      }
      window.addEventListener("pointerup", mup, false); 
