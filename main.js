@@ -39,7 +39,6 @@ window.addEventListener("load", function () {
     function mdown(e){ 
          startx = e.touches?e.touches[0].clientX:e.clientX; 
          starty = e.touches?e.touches[0].clientY:e.clientY; 
- alert(startx);
  e.preventDefault();
     } 
      window.addEventListener("pointerdown", mdown, false); 
@@ -47,6 +46,7 @@ window.addEventListener("load", function () {
          xv = ((e.touches?e.touches[0].clientX:e.clientX) - startx) / 10; 
          yv = ((e.touches?e.touches[0].clientY:e.clientY) - starty) / 10; 
  e.preventDefault();
+ alert(startx);
      }
      window.addEventListener("pointerup", mup, false); 
      window.addEventListener("pointermove", function(e){e.preventDefault();}, false);
