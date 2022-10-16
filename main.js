@@ -39,16 +39,16 @@ window.addEventListener("load", function () {
     function mdown(e){ 
          startx = e.clientX||e.touches[0].clientX; 
          starty = e.clientY||e.touches[0].clientY; 
-     } 
-     window.addEventListener("mousedown", mdown, false); 
-     document.body.addEventListener("touchstart", mdown, false); 
+ e.preventDefault();
+    } 
+     window.addEventListener("pointerdown", mdown, false); 
      function mup(e){ 
          xv = ((e.clientX||e.touches[0].clientX) - startx) / 10; 
          yv = ((e.clientY||e.touches[0].clientY) - starty) / 10; 
+ e.preventDefault();
      }
-     window.addEventListener("mouseup", mup, false); 
-     document.body.addEventListener("touchend", mup, false);
-     document.body.addEventListener("touchmove", function(e){e.preventDefault();}, false);
+     window.addEventListener("pointerup", mup, false); 
+     window.addEventListener("pointermove", function(e){e.preventDefault();}, false);
 
     window.setInterval(tick, 30);
 });
